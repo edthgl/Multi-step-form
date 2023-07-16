@@ -28,14 +28,14 @@
             <div class="circle">1</div>
             <div class="step-content">
               <span>Step 1</span>
-              <b>Your info</b>
+              <b>Tentang Kamu</b>
             </div>
           </div>
           <div class="step">
             <div class="circle">2</div>
             <div class="step-content">
               <span>Step 2</span>
-              <b>Select plan</b>
+              <b>Data Fisik</b>
             </div>
           </div>
           <div class="step">
@@ -52,98 +52,174 @@
               <b>Summary</b>
             </div>
           </div>
+          <div class="step">
+            <div class="circle">5</div>
+            <div class="step-content">
+              <span>Step 5</span>
+              <b>Summary</b>
+            </div>
+          </div>
         </div>
         <!-- Sidebar end -->
         <!-- * Step 1 start -->
         <div class="stp step-1">
           <div class="header">
-            <h1 class="title">Personal info</h1>
-            <p class="exp">
-              Please provide your name, email address, and phone number.
-            </p>
+            <h1 class="title">Tentang Kamu</h1>
+            <p class="exp">Isi no. hp, kotamu, dan jenis kelamin ya!</p>
           </div>
           <form>
-            <div class="label">
-              <label for="name">Name</label>
-              <p class="error">This Field Is Required</p>
+            <div>
+              <div class="label">
+                <label for="phone">No. Handphone</label>
+                <p class="error">Harus diisi!</p>
+              </div>
+              <input
+                required
+                type="tel"
+                id="phone"
+                placeholder="e.g. 081234567890"
+              />
             </div>
-            <input
-              required
-              type="text"
-              id="name"
-              placeholder="e.g. Stephen King"
-            />
-            <div class="label">
-              <label for="email">Email Address</label>
-              <p class="error">This Field Is Required</p>
+            <div class="autocomplete">
+              <div class="label">
+                <label for="city">Kota</label>
+                <p class="error">Harus diisi!</p>
+              </div>
+              <input
+                required
+                type="text"
+                id="city"
+                placeholder="e.g. Jakarta"
+              />
             </div>
-            <input
-              required
-              type="text"
-              id="email"
-              placeholder="e.g. stephenking@lorem.com"
-            />
-            <div class="label">
-              <label for="phone">Phone Number</label>
-              <p class="error">This Field Is Required</p>
+            <div>
+              <div class="label">
+                <label for="city">Gender</label>
+                <p class="error">Harus diisi!</p>
+              </div>
+              <div class="gender-container">
+                <input
+                  checked="checked"
+                  type="radio"
+                  name="gender"
+                  value="1"
+                  id="male"
+                />
+                <label for="male">Laki-laki</label>
+                <input type="radio" name="gender" value="0" id="female" />
+                <label for="female">Wanita</label>
+              </div>
             </div>
-            <input
-              required
-              type="tel"
-              id="phone"
-              placeholder="e.g. +1 234 567 890"
-            />
           </form>
           <div class="btns">
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="next-stp" type="submit">Selanjutnya</button>
           </div>
         </div>
         <!-- Step 1 end -->
         <!-- * Step 2 start -->
         <div class="stp step-2">
           <div class="header">
-            <h1 class="title">Select your plan</h1>
-            <p class="exp">You have the option of monthly or yearly billing.</p>
+            <h1 class="title">Data Fisik</h1>
+            <p class="exp">
+              Isi umur, berat badan, dan tinggi badan kamu!
+            </p>
           </div>
           <form>
-            <div class="plan-card selected">
-              <img src="./assets/images/icon-arcade.svg" alt="arcade" />
-              <div class="plan-info chosen">
-                <b>Arcade</b>
-                <span class="plan-priced">$9/mo</span>
+            <div>
+              <div class="label">
+                <label for="age">Umur</label>
+                <p class="error">Harus diisi!</p>
+              </div>
+              <div class="input-age">
+                <input
+                  required
+                  type="number"
+                  id="age"
+                  placeholder="e.g. 25"
+                />
               </div>
             </div>
-            <div class="plan-card">
-              <img src="./assets/images/icon-advanced.svg" alt="arcade" />
-              <div class="plan-info">
-                <b>Advanced</b>
-                <span class="plan-priced">$12/mo</span>
+            <div>
+              <div class="label">
+                <label for="weight">Berat Badan (kg)</label>
+                <p class="error">Harus diisi!</p>
+              </div>
+              <div class="input-weight">
+                <input
+                  required
+                  type="number"
+                  id="weight"
+                  placeholder="e.g. 75.5"
+                />
               </div>
             </div>
-            <div class="plan-card">
-              <img src="./assets/images/icon-pro.svg" alt="arcade" />
-              <div class="plan-info">
-                <b>Pro</b>
-                <span class="plan-priced">$15/mo</span>
+            <div>
+              <div class="label">
+                <label for="height">Tinggi Badan (cm)</label>
+                <p class="error">Harus diisi!</p>
+              </div>
+              <div class="input-height">
+                <input
+                  required
+                  type="number"
+                  id="height"
+                  placeholder="e.g. 165"
+                />
               </div>
             </div>
           </form>
-          <div class="switcher">
-            <p class="monthly sw-active">Monthly</p>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-            <p class="yearly">Yearly</p>
-          </div>
           <div class="btns">
-            <button class="prev-stp" type="button">Go Back</button>
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="prev-stp" type="button">Kembali</button>
+            <button class="next-stp" type="submit">Selanjutnya</button>
           </div>
         </div>
         <!-- Step 2 end -->
         <!-- * Step 3 start -->
         <div class="stp step-3">
+          <div class="header">
+            <h1 class="title">Tingkat Aktifitas</h1>
+            <p class="exp">Pilih seberapa sering kamu berolahraga</p>
+          </div>
+          <form>
+            <div class="plan-card selected">
+              <div class="plan-info chosen">
+                <b>Tidak aktif</b>
+                <span class="plan-priced">Jarang/tidak pernah olahraga</span>
+              </div>
+            </div>
+            <div class="plan-card">
+              <div class="plan-info">
+                <b>Sedikit Aktif</b>
+                <span class="plan-priced">Olahraga 1-3 jam/minggu</span> <!-- 3-5 6-7 2/day -->
+              </div>
+            </div>
+            <div class="plan-card">
+              <div class="plan-info">
+                <b>Cukup Aktif</b>
+                <span class="plan-priced">Olahraga 3-5 jam/minggu</span>
+              </div>
+            </div>
+            <div class="plan-card">
+              <div class="plan-info">
+                <b>Sangat Aktif</b>
+                <span class="plan-priced">Olahraga 6-7 jam/minggu</span>
+              </div>
+            </div>
+            <div class="plan-card">
+              <div class="plan-info">
+                <b>Super Aktif</b>
+                <span class="plan-priced">Olahraga 2 jam/hari atau lebih</span>
+              </div>
+            </div>
+          </form>
+          <div class="btns">
+            <button class="prev-stp" type="button">Kembali</button>
+            <button class="show-result-stp" type="submit">Tampilkan Hasil</button>
+          </div>
+        </div>
+        <!-- Step 3 end -->
+        <!-- * Step 4 start -->
+        <div class="stp step-4">
           <div class="header">
             <h1 class="title">Pick add-ons</h1>
             <p class="exp">Add-ons help enhance your gaming experience.</p>
@@ -175,13 +251,13 @@
             </div>
           </form>
           <div class="btns">
-            <button class="prev-stp" type="button">Go Back</button>
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="prev-stp" type="button">Kembali</button>
+            <button class="next-stp" type="submit">Selanjutnya</button>
           </div>
         </div>
-        <!-- Step 3 end -->
-        <!-- * Step 4 start -->
-        <div class="stp step-4">
+        <!-- Step 4 end -->
+        <!-- * Step 5 start -->
+        <div class="stp step-5">
           <div class="header">
             <h1 class="title">Finishing up</h1>
             <p class="exp">
@@ -207,13 +283,13 @@
             <p class="total">Total (per month) <b>+$12/mo</b></p>
           </div>
           <div class="btns">
-            <button class="prev-stp" type="button">Go Back</button>
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="prev-stp" type="button">Kembali</button>
+            <button class="next-stp" type="submit">Selanjutnya</button>
           </div>
         </div>
-        <!-- Step 4 end -->
-        <!-- Step 5 start -->
-        <div class="stp step-5">
+        <!-- Step 5 end -->
+        <!-- Step 6 start -->
+        <div class="stp step-6">
           <img src="./assets/images/icon-thank-you.svg" alt="" />
           <div class="header">
             <h1 class="title">Thank you!</h1>
@@ -225,7 +301,7 @@
           </div>
           <button class="next-stp"></button>
         </div>
-        <!-- Step 5 end -->
+        <!-- Step 6 end -->
       </div>
     </div>
   </body>

@@ -114,33 +114,23 @@ body {
   color: white;
   cursor: pointer;
 }
-/* STEP 1 */
-.step-1 {
-  display: flex;
-  width: 90%;
-}
-.step-1 form {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  gap: 1rem;
+.show-result-stp {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  background-color: var(--Marine-blue);
+  color: white;
+  cursor: pointer;
 }
 .label {
   color: var(--Marine-blue);
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.step-1 form input {
-  padding: 1rem;
-  border: 1px solid var(--Cool-gray);
-  border-radius: 7px;
-  font-weight: 500;
-  font-size: 1rem;
-}
-.step-1 form input:focus {
-  outline-color: var(--Purplish-blue);
+  padding-bottom: 6px;
 }
 form input::placeholder {
   font-weight: 500;
@@ -153,12 +143,56 @@ form .error {
   font-size: 0.9rem;
   font-weight: 700;
 }
-/* STEP 2 */
+/* STEP 1 */
+.step-1 {
+  display: flex;
+  width: 90%;
+}
+.step-1 form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: 1rem;
+}
+.step-1 form input {
+  padding: 1rem;
+  border: 1px solid var(--Cool-gray);
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.step-1 form input:focus {
+  outline-color: var(--Purplish-blue);
+}
+/* STEP 1 */
 .step-2 {
   display: none;
   width: 90%;
 }
 .step-2 form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: 1rem;
+}
+.step-2 form input {
+  padding: 1rem;
+  border: 1px solid var(--Cool-gray);
+  border-radius: 7px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.step-2 form input:focus {
+  outline-color: var(--Purplish-blue);
+}
+/* STEP 3 */
+.step-3 {
+  display: none;
+  width: 90%;
+}
+.step-3 form {
   display: flex;
   flex: 1;
   align-items: center;
@@ -211,12 +245,12 @@ form .error {
   color: var(--Cool-gray);
   cursor: pointer;
 }
-/* STEP 3 */
-.step-3 {
+/* STEP 4 */
+.step-4 {
   display: none;
   width: 80%;
 }
-.step-3 form {
+.step-4 form {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -244,7 +278,7 @@ form .error {
   border: 1px solid var(--Purplish-blue);
   background-color: var(--Magnolia);
 }
-.step-3 form input {
+.step-4 form input {
   accent-color: var(--Purplish-blue);
   transform: scale(1.3);
   user-select: none;
@@ -261,8 +295,8 @@ form .error {
 .price {
   color: var(--Purplish-blue);
 }
-/* STEP 4 */
-.step-4 {
+/* STEP 5 */
+.step-5 {
   display: none;
   width: 80%;
 }
@@ -309,8 +343,8 @@ form .error {
   color: var(--Purplish-blue);
   font-size: 1.2rem;
 }
-/* step 5 */
-.step-5 {
+/* step 6 */
+.step-6 {
   display: none;
   align-items: center;
   width: 90%;
@@ -318,7 +352,7 @@ form .error {
   justify-content: center;
   margin: auto;
 }
-.step-5 button {
+.step-6 button {
   display: none;
 }
 /* SWITCH classes */
@@ -410,6 +444,8 @@ input:checked + .slider:before {
     top: 15%;
     max-width: 375px;
     background-color: white;
+    width: 90%;
+    
   }
   .form-container {
     padding: 2rem;
@@ -426,13 +462,13 @@ input:checked + .slider:before {
   .step-1 .btns button {
     margin: auto 0 auto auto;
   }
-  .step-2 form {
+  .step-3 form {
     flex-direction: column;
     gap: 0.5rem;
   }
   .plan-card {
     width: 100%;
-    height: 100px;
+    height: 65px;
     flex-direction: row;
     justify-content: flex-start;
     gap: 1rem;
@@ -453,3 +489,126 @@ input:checked + .slider:before {
     margin: 2rem 0;
   }
 }
+
+
+  /*the container must be positioned relative:*/
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  input[type="text"] {
+    background-color: #f1f1f1;
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+    width:100%;
+  }
+
+  /*when hovering an item:*/
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9;
+  }
+
+  /*when navigating through the items using the arrow keys:*/
+  .autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+  .gender-container {
+    background-color: #6259ff;
+    display: inline-block;
+    border: 2px solid #6259ff;
+  }
+
+  .gender-container input[type="radio"] {
+    opacity: 0;
+    display: none;
+    margin: 0;
+    outline: none;
+  }
+
+  .gender-container input[type="radio"]:checked + label {
+    background-color: #6259ff;
+    color: white;
+    animation-name: radio-active;
+    animation-duration: 0.2s;
+  }
+
+  @keyframes radio-active {
+    from {
+      transform: scale(0.6, 0.6);
+    }
+    to {
+      transform: scale(1, 1);
+    }
+  }
+
+  .gender-container label {
+    padding: 0.8em;
+    cursor: pointer;
+    background: none;
+    display: inline-block;
+    outline: none;
+    letter-spacing: 0.1em;
+    background-color: white;
+    color: black;
+    transition: all ease-in-out 0.1s;
+  }
+
+  /* INPUT SUFFIX */
+  /* prepare wrapper element */
+  div {
+    display: inline-block;
+    position: relative;
+  }
+
+  /* position the unit to the right of the wrapper */
+  /* div::after {
+    position: relative;
+    right: 3em;
+    transition: all 0.05s ease-in-out;
+  } */
+
+
+  /* set the unit abbreviation for each unit class */
+  /* .input-weight::after {
+    content: "kg";
+  }
+  .input-height::after {
+    content: "cm";
+  }
+  .input-age::after {
+    content: "thn";
+  } */
+  /* END OF INPUT SUFFIX */
