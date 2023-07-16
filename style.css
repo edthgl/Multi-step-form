@@ -588,10 +588,10 @@ input:checked + .slider:before {
 
   /* INPUT SUFFIX */
   /* prepare wrapper element */
-  div {
+  /* div {
     display: inline-block;
     position: relative;
-  }
+  } */
 
   /* position the unit to the right of the wrapper */
   /* div::after {

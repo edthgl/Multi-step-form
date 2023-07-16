@@ -17,6 +17,7 @@
     />
     <title>Frontend Mentor | Multi-step form</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="spinner.css">
     <script src="./app.js" defer></script>
   </head>
   <body>
@@ -42,21 +43,7 @@
             <div class="circle">3</div>
             <div class="step-content">
               <span>Step 3</span>
-              <b>Add-ons</b>
-            </div>
-          </div>
-          <div class="step">
-            <div class="circle">4</div>
-            <div class="step-content">
-              <span>Step 4</span>
-              <b>Summary</b>
-            </div>
-          </div>
-          <div class="step">
-            <div class="circle">5</div>
-            <div class="step-content">
-              <span>Step 5</span>
-              <b>Summary</b>
+              <b>Tingkat Aktifitas</b>
             </div>
           </div>
         </div>
@@ -99,14 +86,9 @@
               </div>
               <div class="gender-container">
                 <input
-                  checked="checked"
-                  type="radio"
-                  name="gender"
-                  value="1"
-                  id="male"
-                />
+                  checked="checked" type="radio" name="gender" value="male" id="male" />
                 <label for="male">Laki-laki</label>
-                <input type="radio" name="gender" value="0" id="female" />
+                <input type="radio" name="gender" value="female" id="female" />
                 <label for="female">Wanita</label>
               </div>
             </div>
@@ -127,7 +109,7 @@
           <form>
             <div>
               <div class="label">
-                <label for="age">Umur</label>
+                <label for="age">Umur (thn)</label>
                 <p class="error">Harus diisi!</p>
               </div>
               <div class="input-age">
@@ -181,31 +163,31 @@
             <p class="exp">Pilih seberapa sering kamu berolahraga</p>
           </div>
           <form>
-            <div class="plan-card selected">
+            <div class="plan-card selected" id="tidak">
               <div class="plan-info chosen">
                 <b>Tidak aktif</b>
                 <span class="plan-priced">Jarang/tidak pernah olahraga</span>
               </div>
             </div>
-            <div class="plan-card">
+            <div class="plan-card" id="sedikit">
               <div class="plan-info">
                 <b>Sedikit Aktif</b>
                 <span class="plan-priced">Olahraga 1-3 jam/minggu</span> <!-- 3-5 6-7 2/day -->
               </div>
             </div>
-            <div class="plan-card">
+            <div class="plan-card" id="cukup">
               <div class="plan-info">
                 <b>Cukup Aktif</b>
                 <span class="plan-priced">Olahraga 3-5 jam/minggu</span>
               </div>
             </div>
-            <div class="plan-card">
+            <div class="plan-card" id="sangat">
               <div class="plan-info">
                 <b>Sangat Aktif</b>
                 <span class="plan-priced">Olahraga 6-7 jam/minggu</span>
               </div>
             </div>
-            <div class="plan-card">
+            <div class="plan-card" id="super">
               <div class="plan-info">
                 <b>Super Aktif</b>
                 <span class="plan-priced">Olahraga 2 jam/hari atau lebih</span>
@@ -218,91 +200,12 @@
           </div>
         </div>
         <!-- Step 3 end -->
-        <!-- * Step 4 start -->
-        <div class="stp step-4">
-          <div class="header">
-            <h1 class="title">Pick add-ons</h1>
-            <p class="exp">Add-ons help enhance your gaming experience.</p>
-          </div>
-          <form>
-            <div class="box" data-id="1">
-              <input type="checkbox" id="online" />
-              <div class="description">
-                <label for="online">Online service</label>
-                <small>Access to multiplayer games</small>
-              </div>
-              <p class="price">+$1/mo</p>
-            </div>
-            <div class="box" data-id="2">
-              <input type="checkbox" id="larger" />
-              <div class="description">
-                <label for="larger">Larger storage</label>
-                <small>Extra 1TB of cloud save</small>
-              </div>
-              <p class="price">+$2/mo</p>
-            </div>
-            <div class="box" data-id="3">
-              <input type="checkbox" id="profile" />
-              <div class="description">
-                <label for="profile">Customizable Profile</label>
-                <small>Custom theme on your profile</small>
-              </div>
-              <p class="price">+$2/mo</p>
-            </div>
-          </form>
-          <div class="btns">
-            <button class="prev-stp" type="button">Kembali</button>
-            <button class="next-stp" type="submit">Selanjutnya</button>
-          </div>
-        </div>
-        <!-- Step 4 end -->
-        <!-- * Step 5 start -->
-        <div class="stp step-5">
-          <div class="header">
-            <h1 class="title">Finishing up</h1>
-            <p class="exp">
-              Double-check everything looks OK before confirming.
-            </p>
-          </div>
-          <div class="selection-box">
-            <div class="selection-container">
-              <div class="selected-plan">
-                <p class="plan-name">Arcade(Monthly)</p>
-                <p class="plan-price">$9/mo</p>
-              </div>
-              <hr />
-              <div class="addons">
-                <template>
-                  <div class="selected-addon">
-                    <span class="service-name">Online serivice</span>
-                    <span class="servic-price">+$1/mo</span>
-                  </div>
-                </template>
-              </div>
-            </div>
-            <p class="total">Total (per month) <b>+$12/mo</b></p>
-          </div>
-          <div class="btns">
-            <button class="prev-stp" type="button">Kembali</button>
-            <button class="next-stp" type="submit">Selanjutnya</button>
-          </div>
-        </div>
-        <!-- Step 5 end -->
-        <!-- Step 6 start -->
-        <div class="stp step-6">
-          <img src="./assets/images/icon-thank-you.svg" alt="" />
-          <div class="header">
-            <h1 class="title">Thank you!</h1>
-            <p class="exp">
-              Thanks for confirming your subscription! We hope you have fun
-              using our platform. If you ever need support, please feel free to
-              email us at support@loremgaming.com.
-            </p>
-          </div>
-          <button class="next-stp"></button>
-        </div>
-        <!-- Step 6 end -->
+        
       </div>
+    </div>
+    <div class="spinner" hidden>
+      <p>Harap Tunggu</p>
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
   </body>
 </html>

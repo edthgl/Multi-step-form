@@ -1,7 +1,8 @@
 const steps = document.querySelectorAll(".stp");
 const circleSteps = document.querySelectorAll(".step");
-const formInputs = document.querySelectorAll(".step-1 form input");
-const plans = document.querySelectorAll(".plan-card");
+const formInputs1 = document.querySelectorAll(".step-1 form input");
+const formInputs2 = document.querySelectorAll(".step-2 form input");
+const activities = document.querySelectorAll(".plan-card");
 const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
 const total = document.querySelector(".total b");
@@ -14,10 +15,15 @@ const obj = {
   kind: null,
   price: null,
 };
+const selectedActivity = {
+  name: 'Sedikit Aktif',
+  kind: 'sedikit', // tidak, sedikit, cukup, sangat, super 
+}
 
 steps.forEach((step) => {
   const nextBtn = step.querySelector(".next-stp");
   const prevBtn = step.querySelector(".prev-stp");
+  const showResultBtn = step.querySelector(".show-result-stp");
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
       document.querySelector(`.step-${currentStep}`).style.display = "none";
@@ -30,15 +36,29 @@ steps.forEach((step) => {
   if (nextBtn != null) {
     nextBtn.addEventListener("click", () => {
       document.querySelector(`.step-${currentStep}`).style.display = "none";
-      if (currentStep < 6 && validateForm()) {
+      let valid =  true;
+
+      if (currentStep == 1) {
+        valid = validateForm1();
+      } else if (currentStep == 2) {
+        valid = validateForm2();
+      }
+      
+
+      if (currentStep < 3 && valid) {
         currentStep++;
         currentCircle++;
-        setTotal();
       }
       document.querySelector(`.step-${currentStep}`).style.display = "flex";
       circleSteps[currentCircle].classList.add("active");
       // summary(obj);
     });
+  }
+
+  if (showResultBtn != null) {
+    showResultBtn.addEventListener("click", () => {
+      calculateBMR();
+    })
   }
   
 });
@@ -51,23 +71,41 @@ function summary(obj) {
     obj.kind ? "yearly" : "monthly"
   })`;
 }
-function validateForm() {
+
+function validateForm1() {
   let valid = true;
-  for (let i = 0; i < formInputs.length; i++) {
-    if (!formInputs[i].value) {
+  for (let i = 0; i < formInputs1.length; i++) {
+    if (!formInputs1[i].value) {
       valid = false;
-      formInputs[i].classList.add("err");
-      findLabel(formInputs[i]).nextElementSibling.style.display = "flex";
+      formInputs1[i].classList.add("err");
+      findLabel(formInputs1[i]).nextElementSibling.style.display = "flex";
     } else {
-      valid = true;
-      formInputs[i].classList.remove("err");
-      if (findLabel(formInputs[i]).nextElementSibling != null) {
-        findLabel(formInputs[i]).nextElementSibling.style.display = "none";
+      formInputs1[i].classList.remove("err");
+      if (findLabel(formInputs1[i]).nextElementSibling != null) {
+        findLabel(formInputs1[i]).nextElementSibling.style.display = "none";
       }
     }
   }
   return valid;
 }
+function validateForm2() {
+  let valid = true;
+  for (let i = 0; i < formInputs2.length; i++) {
+    if (!formInputs2[i].value) {
+      valid = false;
+      formInputs2[i].classList.add("err");
+      findLabel(formInputs2[i]).nextElementSibling.style.display = "flex";
+    } else {
+      formInputs2[i].classList.remove("err");
+      if (findLabel(formInputs2[i]).nextElementSibling != null) {
+        findLabel(formInputs2[i]).nextElementSibling.style.display = "none";
+      }
+    }
+  }
+  return valid;
+}
+
+
 function findLabel(el) {
   const idVal = el.id;
   const labels = document.getElementsByTagName("label");
@@ -76,14 +114,14 @@ function findLabel(el) {
   }
 }
 
-plans.forEach((plan) => {
-  plan.addEventListener("click", () => {
+activities.forEach((act) => {
+  act.addEventListener("click", () => {
     document.querySelector(".selected").classList.remove("selected");
-    plan.classList.add("selected");
-    const planName = plan.querySelector("b");
-    const planPrice = plan.querySelector(".plan-priced");
-    obj.plan = planName;
-    obj.price = planPrice;
+    act.classList.add("selected");
+    const activityName = act.querySelector("b").innerHTML;
+    const activityKind = act.id;
+    selectedActivity.name = activityName;
+    selectedActivity.kind = activityKind;
   });
 });
 
@@ -154,28 +192,23 @@ function showAddon(ad, val) {
   }
 }
 
-function setTotal() {
-  const str = planPrice.innerHTML;
-  const res = str.replace(/\D/g, "");
-  const addonPrices = document.querySelectorAll(
-    ".selected-addon .servic-price"
-  );
 
-  let val = 0;
-  for (let i = 0; i < addonPrices.length; i++) {
-    const str = addonPrices[i].innerHTML;
-    const res = str.replace(/\D/g, "");
+function calculateBMR() {
+  const phone = document.getElementById('phone').value;
+  const city = document.getElementById('city').value;
+  const gender = document.querySelector('input[name="gender"]:checked').value;
+  const age = parseFloat(document.getElementById('age').value.replace(",", "."));
+  const weight = parseFloat(document.getElementById('weight').value.replace(",", "."));
+  const height = parseFloat(document.getElementById('height').value.replace(",", "."));
 
-    val += Number(res);
-  }
-  total.innerHTML = `$${val + Number(res)}/${time ? "yr" : "mo"}`;
-}
-function setTime(t) {
-  return (time = t);
+  let genderConst = gender == 'male' ? 5 : -161;
+
+  const bmrResult = 10 * weight + 6.25 * height - 5 * age + genderConst;
+
+  console.log('LL: BMR Result : ' + bmrResult.toFixed());
 }
 
 function autocomplete(inp, arr) {
-  console.log("LL:: LOGHHH");
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
   var currentFocus;
@@ -795,7 +828,5 @@ var city = [
 "SORONG"
 ];
 
-console.log('LL:: LOHHHH');
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("city"), city);
-console.log('LL:: LAHHHH');
