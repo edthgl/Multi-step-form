@@ -1,0 +1,61 @@
+.background {
+}
+
+.cloud-top-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.cloud-bottom-bg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.background-pattern {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.15;
+  z-index: -1;
+  /* background-image: radial-gradient(circle at center center, #444cf7, #e5e5f7),
+    repeating-radial-gradient(
+      circle at center center,
+      #444cf7,
+      #444cf7,
+      10px,
+      transparent 20px,
+      transparent 10px
+    );
+  background-blend-mode: multiply; */
+
+  //--s: 60px; /* control the size */
+  // --c: #fff; /* first color */
+
+  /* --_g: #0000 8%,var(--c) 0 17%,#0000 0 58%;
+  background: 
+    linear-gradient(135deg,#0000 20.5%,var(--c) 0 29.5%,#0000 0) 0 calc(var(--s)/4),
+    linear-gradient( 45deg,var(--_g)) calc(var(--s)/2) 0,
+    linear-gradient(135deg,var(--_g),var(--c) 0 67%,#0000 0),        
+    linear-gradient( 45deg,var(--_g),var(--c) 0 67%,#0000 0 83%,var(--c) 0 92%,#0000 0),
+    #1095c1; /* second color */
+  /* background-size: var(--s) var(--s);  */
+
+  background: linear-gradient(45deg, #cbb6e080 25%, transparent 21%),
+    linear-gradient(315deg, #cbb6e080 25%, transparent 21%),
+    linear-gradient(45deg, #cbb6e0 10%, transparent 11%),
+    linear-gradient(315deg, #cbb6e0 10%, transparent 11%),
+    linear-gradient(135deg, #cbb6e080 25%, transparent 21%),
+    linear-gradient(225deg, #cbb6e080 25%, transparent 21%),
+    linear-gradient(135deg, #cbb6e0 10%, transparent 11%),
+    linear-gradient(225deg, #cbb6e0 10%, transparent 11%),
+    radial-gradient(#cbb6e0 20%, transparent 21%);
+  background-size: 2em 2em;
+  /* opacity: 1; */
+}

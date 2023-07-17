@@ -1,0 +1,18 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 132" width="600" height="132">
+	<title>mobile background</title>
+	<defs>
+		<image  width="600" height="200" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAADIAQMAAAAOUQ31AAAAAXNSR0IB2cksfwAAAANQTFRF+fbnYedEZQAAACVJREFUeJztwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAAAAAwI8BO2AAAbOP98IAAAAASUVORK5CYII="/>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="NaN"/> </filter>
+	</defs>
+	<style>
+		.s0 { fill: #aab5d1 } 
+		.s1 { fill: #a4c8ae } 
+		.s2 { filter: url(#f1);fill: #a4c8ae } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="-68"/>
+	<path id="Shape 5" class="s0" d="m750 150"/>
+	<path id="Shape 1" class="s1" d="m591.4-43c0 0-57.3 97.8-126.1 88.2-17.1-2.4-34.3-12.9-48.3-14-12.2-1-52.1 1.5-66.2-8.3-14.1-9.9-33.1-41.6-27.3-60.8 16.3-53.9 93.8-24.7 186.5-19.1 40.9 2.5 81.4 14 81.4 14z"/>
+	<path id="Shape 2" class="s2" d="mNaNNaN"/>
+	<path id="Shape 3" class="s0" d="m557 314c-61.9 0-112-52.1-112-116.5 0-64.4 50.1-116.5 112-116.5 61.9 0 112 52.1 112 116.5 0 64.4-50.1 116.5-112 116.5z"/>
+	<path id="Shape 4" class="s0" d="m128.4 110.8c-45.8-24.6-7.9-52.9-54.8-70.5-73.4-27.4-79.6 48-170.4 24.2-23.9-6.3-34.6 16.3-38.2 34.5-11.5 58.2 41.6 90.3 109 124 84.1 42 105.9 19.3 206 1 55.6-10.2 62.7-13.6 78.4-43.4 14.4-27.3 22.7-52.6 0-70.8-48.4-38.8-90.7 22.2-130 1z"/>
+</svg>
