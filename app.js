@@ -7,6 +7,11 @@ const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
 const total = document.querySelector(".total b");
 const planPrice = document.querySelector(".plan-price");
+const form = document.querySelector(".form");
+const spinner = document.querySelector(".spinner");
+const resultContainer = document.querySelector(".result-container");
+const resultValue = document.querySelector(".result-value");
+
 let time;
 let currentStep = 1;
 let currentCircle = 0;
@@ -57,7 +62,10 @@ steps.forEach((step) => {
 
   if (showResultBtn != null) {
     showResultBtn.addEventListener("click", () => {
+      form.hidden = true;
       calculateBMR();
+      spinner.hidden = true;
+      resultContainer.hidden = false;
     })
   }
   
@@ -205,8 +213,15 @@ function calculateBMR() {
 
   const bmrResult = 10 * weight + 6.25 * height - 5 * age + genderConst;
 
-  console.log('LL: BMR Result : ' + bmrResult.toFixed());
+  resultValue.innerHTML = `${bmrResult.toFixed()} kcal`;
 }
+
+window.onscroll = function() {
+  var top = document.body.scrollTop + document.documentElement.scrollTop == 0;
+  
+  document.querySelector(".cloud-bottom-bg").hidden = top ? false : true;
+  document.querySelector(".bottom-cloud").style.display = 'none';
+};
 
 function autocomplete(inp, arr) {
   /*the autocomplete function takes two arguments,
@@ -279,6 +294,7 @@ function autocomplete(inp, arr) {
       }
     }
   });
+
   function addActive(x) {
     /*a function to classify an item as "active":*/
     if (!x) return false;

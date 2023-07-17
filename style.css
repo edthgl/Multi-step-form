@@ -1,10 +1,10 @@
-
 :root {
   --Marine-blue: hsl(213, 96%, 18%);
   --Purplish-blue: hsl(243, 100%, 62%);
   --Pastel-blue: hsl(228, 100%, 84%);
   --Light-blue: hsl(206, 94%, 87%);
   --Strawberry-red: hsl(354, 84%, 57%);
+  --primaryColor: hsl(237, 44%, 39%);
 
   --Cool-gray: hsl(231, 11%, 63%);
   --Light-gray: hsl(229, 24%, 87%);
@@ -25,7 +25,7 @@ img {
   max-width: 100%;
 }
 body {
-  background-color: var(--Magnolia);
+  background-color: #f9f6e7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +453,7 @@ input:checked + .slider:before {
     height: auto;
   }
   .title-label {
-    font-family: 'The-Bold-Font';
+    font-family: "The-Bold-Font";
     height: 100px;
     width: 100%;
   }
@@ -495,7 +495,6 @@ input:checked + .slider:before {
     max-width: 375px;
     background-color: white;
     width: 90%;
-    
   }
   .form-container {
     padding: 2rem;
@@ -538,127 +537,194 @@ input:checked + .slider:before {
   .switcher {
     margin: 2rem 0;
   }
+
+  .result-container {
+    /* display: flex; */
+    flex-direction: column;
+    height: 100vh;
+    /* background: linear-gradient(
+      180deg,
+      rgba(255, 252, 247, 1) 0%,
+      rgba(252, 249, 218, 1) 100%
+    ); */
+  }
+
+  .result-image-logo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .result-content-container {
+    margin-top: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: max-content;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .result-value-container {
+    margin-top: 320px;
+  }
+
+  .result-value-container h1 {
+    color: var(--primaryColor);
+  }
+
+  .result-value-container {
+    margin-top: 20px;
+    color: var(--primaryColor);
+  }
+
+  .result-description {
+    margin-top: 20px;
+  }
+
+  .recommendation-container {
+    margin-top: 30px;
+  }
+
+  .recommendation-container h3 {
+    text-decoration: underline;
+  }
+
+  .product-ctn {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    object-fit: contain;
+  }
+
+  .product-img {
+    height: 20vh;
+    object-fit: contain;
+    z-index: 0;
+  }
+
+  .bottom-cloud {
+    background-image: url("./assets/images/cloud_1.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    object-fit: cover;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 252, 247, 1) 0%,
+      rgba(252, 249, 218, 1) 100%
+    );
+  }
+
+  .shadow-downward {
+    -webkit-filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.4));
+    /* Similar syntax to box-shadow */
+  }
+
+  .shadow-upward {
+    -webkit-filter: drop-shadow(3px -4px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(-3px -4px 4px rgba(0, 0, 0, 0.4));
+    /* Similar syntax to box-shadow */
+  }
 }
 
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
 
-  /*the container must be positioned relative:*/
-  .autocomplete {
-    position: relative;
-    display: inline-block;
+input[type="text"] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+  width: 100%;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+.gender-container {
+  background-color: #aab5d1;
+  display: inline-block;
+  border: 2px solid #aab5d1;
+}
+
+.gender-container input[type="radio"] {
+  opacity: 0;
+  display: none;
+  margin: 0;
+  outline: none;
+}
+
+.gender-container input[type="radio"]:checked + label {
+  background-color: #aab5d1;
+  color: white;
+  animation-name: radio-active;
+  animation-duration: 0.2s;
+}
+
+@keyframes radio-active {
+  from {
+    transform: scale(0.6, 0.6);
   }
-  input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
+  to {
+    transform: scale(1, 1);
   }
+}
 
-  input[type="text"] {
-    background-color: #f1f1f1;
-    width: 100%;
-  }
-
-  input[type="submit"] {
-    background-color: DodgerBlue;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;
-  }
-
-  .autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
-    width:100%;
-  }
-
-  /*when hovering an item:*/
-  .autocomplete-items div:hover {
-    background-color: #e9e9e9;
-  }
-
-  /*when navigating through the items using the arrow keys:*/
-  .autocomplete-active {
-    background-color: DodgerBlue !important;
-    color: #ffffff;
-  }
-
-  .gender-container {
-    background-color: #aab5d1;
-    display: inline-block;
-    border: 2px solid #aab5d1;
-  }
-
-  .gender-container input[type="radio"] {
-    opacity: 0;
-    display: none;
-    margin: 0;
-    outline: none;
-  }
-
-  .gender-container input[type="radio"]:checked + label {
-    background-color: #aab5d1;
-    color: white;
-    animation-name: radio-active;
-    animation-duration: 0.2s;
-  }
-
-  @keyframes radio-active {
-    from {
-      transform: scale(0.6, 0.6);
-    }
-    to {
-      transform: scale(1, 1);
-    }
-  }
-
-  .gender-container label {
-    padding: 0.8em;
-    cursor: pointer;
-    background: none;
-    display: inline-block;
-    outline: none;
-    letter-spacing: 0.1em;
-    background-color: white;
-    color: black;
-    transition: all ease-in-out 0.1s;
-  }
-
-  /* INPUT SUFFIX */
-  /* prepare wrapper element */
-  /* div {
-    display: inline-block;
-    position: relative;
-  } */
-
-  /* position the unit to the right of the wrapper */
-  /* div::after {
-    position: relative;
-    right: 3em;
-    transition: all 0.05s ease-in-out;
-  } */
-
-
-  /* set the unit abbreviation for each unit class */
-  /* .input-weight::after {
-    content: "kg";
-  }
-  .input-height::after {
-    content: "cm";
-  }
-  .input-age::after {
-    content: "thn";
-  } */
-  /* END OF INPUT SUFFIX */
+.gender-container label {
+  padding: 0.8em;
+  cursor: pointer;
+  background: none;
+  display: inline-block;
+  outline: none;
+  letter-spacing: 0.1em;
+  background-color: white;
+  color: black;
+  transition: all ease-in-out 0.1s;
+}

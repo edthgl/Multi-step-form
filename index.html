@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="font.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="spinner.css" />
+    <link rel="stylesheet" href="background-pattern.css" />
+    <link rel="stylesheet" href="product-carousel.css" />
     <script src="./app.js" defer></script>
   </head>
   <body>
@@ -209,6 +211,8 @@
         <!-- Step 3 end -->
       </div>
     </div>
+
+    <!-- Spinner -->
     <div class="spinner" hidden>
       <p>Harap Tunggu</p>
       <div class="lds-ellipsis">
@@ -218,5 +222,62 @@
         <div></div>
       </div>
     </div>
+    <!-- Spinner end -->
+
+    <!-- Result page -->
+    <div class="result-container" hidden>
+      <div class="background">
+        <div class="background-pattern"></div>
+        <img
+          class="cloud-top-bg shadow-downward"
+          src="./assets/images/cloud_top.svg"
+          style='width: 100%; object-fit: cover'
+        />
+        <img
+          class="cloud-bottom-bg shadow-upward"
+          src="./assets/images/cloud_1.svg"
+          style='width: 100%; object-fit: cover'
+        />
+      </div>
+      <img class="cloud-top" src="./assets/images/cloud_top.svg" />
+      <img class="result-image-logo" src="./assets/images/higlo-bmr-logo.png" />
+
+      <div class="bottom-cloud"></div>
+      <div class="result-content-container">
+        <p>Kebutuhan kalori harianmu adalah:</p>
+        <div class="result-value-container">
+          <h1 class="result-value"></h1>
+        </div>
+        <p class="result-description">
+          BMR tinggi menunjukkan bahwa kamu perlu membakar lebih banyak kalori
+          untuk menunjang aktivitas sehari-hari.
+        </p>
+        <div class="recommendation-container">
+          <h3>Rekomendasi</h3>
+          <div>
+            <a target="_blank" href="https://shopee.co.id/Higlo-Collagen-20-Sachet-i.986408144.23639161697">
+              <div class="product-ctn">
+                <img class="product-img" src="./assets/images/product-higlo-collagen.jpg" alt="">
+              </div>
+            </a>
+            
+            <a target="_blank" href="https://shopee.co.id/Higlo-Fiber-10-Sachet-i.986408144.15597264329">
+              <div class="product-ctn">
+                <img class="product-img" src="./assets/images/product-higlo-fiber.jpg" alt="">
+              </div>
+            </a>
+            
+            <a target="_blank" href="https://shopee.co.id/Higlo-Bundle-Fiber-Collagen-i.986408144.22739170152">
+              <div class="product-ctn">
+                <img class="product-img" src="./assets/images/product-higlo-bundle.jpg" alt="">
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <img class="cloud-bot" src="./assets/images/cloud_1.svg" 
+      style='width: 100%; object-fit: cover'/>
+    </div>
+    <!-- Result page end-->
   </body>
 </html>
